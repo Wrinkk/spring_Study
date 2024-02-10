@@ -3,12 +3,14 @@ package hello.core.common;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
 @Component
-@Scope(value = "request")
+@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS) // 인터페이스 일 경우 INTERFACES 로 변경, 마구 사용할시 유지보수 매우어려워짐.
+//@Scope(value = "request")
 public class MyLogger {
 
     private String uuid;
