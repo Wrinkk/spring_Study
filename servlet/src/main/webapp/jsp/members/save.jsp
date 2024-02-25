@@ -5,7 +5,7 @@
     // request, response 사용 가능 문법상 지원이 됨.
     MemberRepository memberRepository = MemberRepository.getInstance();
 
-    System.out.println("save.jsp");
+    System.out.println("save-result.jsp");
     String username = request.getParameter("username");
     int age = Integer.parseInt(request.getParameter("age"));        // 응답파일 형태가 늘 문자타입이기에 Integer로 변환해줘야함.
 
