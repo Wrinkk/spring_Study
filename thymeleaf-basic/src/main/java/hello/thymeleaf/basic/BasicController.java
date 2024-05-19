@@ -123,6 +123,13 @@ public class BasicController {
         return "basic/condition";
     }
 
+    /* 파서 주석으로 작성시 페이지 소스로 볼시 아예안보임*/
+    @GetMapping("/comments")
+    public String comments(Model model) {
+        model.addAttribute("data", "Spring!");
+        return "basic/comments";
+    }
+
     private void addUsers(Model model) {
 
         List<User> list = new ArrayList<>();
@@ -131,7 +138,6 @@ public class BasicController {
         list.add(new User("UserC", 30));
 
         model.addAttribute("users", list);
-
 
     }
 
